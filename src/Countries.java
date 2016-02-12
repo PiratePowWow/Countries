@@ -9,13 +9,14 @@ import java.util.Scanner;
 public class Countries {
     public static HashMap<Character, ArrayList<String>> countries = new HashMap<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
+        readFile("countries.txt");
         while (true) {
             System.out.print("Enter a letter:");
 
-            String fileName = scanner.nextLine() + "_Countries";
-            String
+            String fileName = scanner.nextLine().toUpperCase() + "_Countries.txt";
+            String fileContent = fileContent(fileName);
             writeFile(fileName, fileContent);
 
         }
@@ -25,6 +26,11 @@ public class Countries {
     }
 
     static String fileContent(String fileName){
+        ArrayList<String> selectedCountries = new ArrayList<>();
+        for (String country: countries.get(fileName.toLowerCase().charAt(0))){
+            selectedCountries.add(country);
+        }
+        return String.join(", ", selectedCountries);
 
 
     }
