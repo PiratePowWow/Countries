@@ -5,6 +5,10 @@ public class Country {
     private String abbreviation;
     private String country;
 
+    @Override
+    public String toString(){
+        return this.abbreviation + "|" + this.country + "\n";
+    }
 
     public String getAbbreviation() {
         return abbreviation;
