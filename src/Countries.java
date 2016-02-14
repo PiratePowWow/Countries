@@ -18,10 +18,10 @@ public class Countries {
             String fileName = scanner.nextLine().toUpperCase() + "_Countries.txt";
             String fileContent = fileContent(fileName);
             writeFile(fileName, fileContent);
-
         }
+    }
 
-
+    static void printMap(){
 
     }
 
@@ -31,8 +31,6 @@ public class Countries {
             selectedCountries.add(country);
         }
         return String.join(", ", selectedCountries);
-
-
     }
 
     static void readFile(String fileName) throws FileNotFoundException {
